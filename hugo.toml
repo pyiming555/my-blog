@@ -46,7 +46,7 @@ enableRobotsTXT = true         # 【SEO优化】自动生成 robots.txt，告诉
 
     # 首页信息配置（Profile 模式）
     [params.homeInfoParams]
-        Title = "👋 欢迎来到 pyiming 的数字花园"
+        Title = "欢迎来到 pyiming 的博客"
         Content = """这里记录我的学习笔记、代码实践和生活思考。很高兴你能来。
 
 💡 专注领域：算法 / 编程技术 / 个人成长""" # 【优化】使用多行文本让主页排版更好看
@@ -102,6 +102,12 @@ enableRobotsTXT = true         # 【SEO优化】自动生成 robots.txt，告诉
         ordered = false
     [markup.highlight]
         guessSyntax = true # 【优化】即使代码块没写语言，也尝试自动高亮
+    [markup.goldmark.extensions]
+        [markup.goldmark.extensions.passthrough]
+            enable = true
+            [markup.goldmark.extensions.passthrough.delimiters]
+                block = [['\[', '\]'], ['$$', '$$']]
+                inline = [['\(', '\)'], ['$', '$']]
 
 # 分类配置
 [taxonomies]
