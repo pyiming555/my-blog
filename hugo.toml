@@ -5,7 +5,8 @@ theme = "PaperMod"
 
 # 开启每篇文章的中文字数统计（对中文 SEO 和阅读体验非常重要）
 hasCJKLanguage = true
-paginate = 10                  # 【优化】设置每页显示的文章数
+[pagination]
+    pagerSize = 10             # 【优化】设置每页显示的文章数
 enableRobotsTXT = true         # 【SEO优化】自动生成 robots.txt，告诉爬虫哪些可以抓取
 
 [params]
