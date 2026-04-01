@@ -1,18 +1,19 @@
 {{ if or .Params.math .Site.Params.math }}
-<link crossorigin="anonymous" integrity="sha384-rcA2RVJzSlCPMM/Z70680AagOBuTdqp/Fm5J8FofE04pbkQ08G1F2Y7m5t6B/nB/" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
-<script crossorigin="anonymous" integrity="sha384-bYQxHkO8vHPM1Xb0nN2hX5nJ5uJtZ8K8K/Xh8/Gf25X/E0jY/bXbXnXXvX" src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js"></script>
-<script crossorigin="anonymous" integrity="sha384-QW21yQpW8e0hWv+lA11t9V2L/M1S//G2Ie71P1Bq3eU1X2qWj/Xj3A2t81C" src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        renderMathInElement(document.body, {
-            delimiters: [
-                {left: "$$", right: "$$", display: true},
-                {left: "$", right: "$", display: false},
-                {left: "\\(", right: "\\)", display: false},
-                {left: "\\[", right: "\\]", display: true}
-            ],
-            throwOnError : false
-        });
-    });
-</script>
+<!-- KaTeX CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css" crossorigin="anonymous">
+
+<!-- KaTeX JS (带有 defer 确保按顺序加载且不阻塞页面) -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js" crossorigin="anonymous"></script>
+
+<!-- Auto-render JS，并且在它加载完成后立刻执行渲染 -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js" crossorigin="anonymous"
+    onload="renderMathInElement(document.body, {
+        delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '\\[', right: '\\]', display: true},
+            {left: '$', right: '$', display: false},
+            {left: '\\(', right: '\\)', display: false}
+        ],
+        throwOnError : false
+    });"></script>
 {{ end }}
