@@ -1,54 +1,29 @@
-﻿baseURL = "https://pyiming.pages.dev/" # 部署到 Cloudflare 后记得改成实际域名
+baseURL = "https://pyiming.pages.dev/" # 部署到 Cloudflare 后记得改成你实际的域名
 languageCode = "zh-cn"
 title = "pyiming 的博客"
 theme = "PaperMod"
 
-# 开启每篇文章的中文字数统计（对中文 SEO 和阅读体验非常重要）
+# 开启每篇文章的中文字数统计（对中文 SEO 非常重要）
 hasCJKLanguage = true
-paginate = 10                  # 【优化】设置每页显示的文章数
-enableRobotsTXT = true         # 【SEO优化】自动生成 robots.txt，告诉爬虫哪些可以抓取
 
 [params]
-    env = "production"         # 开启生产环境，启用 SEO 元标签
-    description = "pyiming 的个人博客，分享技术、算法学习、后端开发与生活感悟" # 【优化】稍微扩充描述
-    keywords = ["pyiming", "博客", "技术分享", "算法", "后端", "Python", "LeetCode"] # 【优化】增加一些硬核关键词
+    env = "production" # 开启生产环境，启用 SEO 元标签
+    description = "pyiming 的个人博客，分享技术、算法学习与生活感悟"
+    keywords = ["pyiming", "博客", "技术分享", "算法", "个人主页"]
     author = "pyiming"
-    
-    # 【SEO优化】网站所有权验证（上线后去 Google Search Console 获取并填入）
-    # googleSiteVerification = "你的 Google 验证码"
-    # baiduSiteVerification = "你的 Baidu 验证码"
-
-    # 【LaTeX支持】开启数学公式支持标识（需配合后面的 HTML 代码使用）
-    math = true
-
-    # 【体验优化】全站基础设置
-    defaultTheme = "auto"      # 默认主题根据用户系统自动切换 (light/dark)
-    dateFormat = "2006-01-02"  # 【优化】将日期格式改为中国人习惯的 YYYY-MM-DD
-    
-    # 界面功能优化
-    ShowReadingTime = true       # 显示阅读时间
-    ShowShareButtons = true      # 显示社交分享按钮
-    ShowCodeCopyButtons = true   # 开启代码块一键复制按钮
-    ShowBreadCrumbs = true       # 开启面包屑导航（利于 SEO 结构和用户导航）
-    ShowPostNavLinks = true      # 【SEO优化】显示上一篇/下一篇链接（增加内部链接，利于爬虫抓取）
-    ShowToc = true               # 【优化】显示文章目录（长文必备）
-    TocOpen = false              # 【优化】目录默认折叠，不占用过多空间
-    ShowWordCount = true         # 【优化】显示字数
-    ShowFullTextContent = false  # 首页只显示摘要
-    comments = false             # 默认关闭评论
-
-    # 网站 Logo/左上角名字配置
-    [params.label]
-        text = "pyiming"
-        # icon = "/favicon.ico"  # 【建议】如果有头像，放在 static 目录下并取消此行注释
-        # iconHeight = 30
 
     # 首页信息配置（Profile 模式）
     [params.homeInfoParams]
-        Title = "👋 欢迎来到 pyiming 的数字花园"
-        Content = """这里记录我的学习笔记、代码实践和生活思考。很高兴你能来。
+        Title = "欢迎来到 pyiming 的博客"
+        Content = "这里是我的数字花园，记录我的学习笔记、代码实践和生活思考。很高兴你能来。"
 
-💡 专注领域：算法 / 编程技术 / 个人成长""" # 【优化】使用多行文本让主页排版更好看
+    # 界面功能优化
+    ShowReadingTime = true        # 显示阅读时间
+    ShowShareButtons = true      # 显示社交分享按钮
+    ShowCodeCopyButtons = true   # 开启代码块一键复制按钮
+    ShowBreadCrumbs = true       # 开启面包屑导航（利于 SEO 结构）
+    ShowFullTextContent = false  # 首页只显示摘要
+    comments = false             # 默认关闭评论，以后可以加
 
     # SEO 社交链接配置
     [[params.socialIcons]]
@@ -58,17 +33,7 @@ enableRobotsTXT = true         # 【SEO优化】自动生成 robots.txt，告诉
         name = "email"
         url = "mailto:pyiming555@gmail.com"
 
-# 【体验优化】本地搜索配置（针对 PaperMod 的 Fuse.js 搜索中文优化）
-[params.fuseOpts]
-    isCaseSensitive = false
-    shouldSort = true
-    location = 0
-    distance = 1000
-    threshold = 0.4
-    minMatchCharLength = 1      # 【关键】中文搜索设为 1，否则搜单个汉字可能无结果
-    keys = ["title", "permalink", "summary", "content"]
-
-# 导航栏配置
+# 导航栏配置（全中文）
 [menu]
     [[menu.main]]
         identifier = "posts"
@@ -91,7 +56,7 @@ enableRobotsTXT = true         # 【SEO优化】自动生成 robots.txt，告诉
         url = "/search"
         weight = 40
 
-# 针对搜索引擎爬虫的优化与 Markdown 渲染
+# 针对搜索引擎爬虫的优化
 [markup]
     [markup.goldmark.renderer]
         unsafe = true # 允许在 Markdown 中使用 HTML
@@ -99,25 +64,13 @@ enableRobotsTXT = true         # 【SEO优化】自动生成 robots.txt，告诉
         startLevel = 2
         endLevel = 4
         ordered = false
-    [markup.highlight]
-        guessSyntax = true # 【优化】即使代码块没写语言，也尝试自动高亮
 
 # 分类配置
 [taxonomies]
     category = "categories"
     tag = "tags"
     series = "series"
-
-# 【SEO优化】短链接设置，去掉链接中的日期，使用 /posts/文章名/ 格式
-[permalinks]
-    posts = "/posts/:slug/" # 如果没有定义 slug，会默认使用 title
-
-# 【SEO优化】站点地图配置，指引爬虫抓取频率
-[sitemap]
-    changefreq = "weekly"
-    priority = 0.5
-    filename = "sitemap.xml"
-
-# 让首页额外输出一个 index.json 给搜索用
+    
+    # 让首页额外输出一个 index.json 给搜索用
 [outputs]
-    home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS", "JSON"]
