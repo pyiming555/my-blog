@@ -1,0 +1,15 @@
+<script src="https://giscus.app/client.js"
+        data-repo="pyiming555/my-blog"
+        data-repo-id="R_kgDORztq0A"
+        data-category="Announcements"
+        data-category-id="DIC_kwDORztq0M4C6FfX"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        crossorigin="anonymous"
+        async>
+</script>
