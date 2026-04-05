@@ -36,7 +36,7 @@ enableRobotsTXT = true         # 【SEO优化】自动生成 robots.txt，告诉
     TocOpen = false              # 【优化】目录默认折叠，不占用过多空间
     ShowWordCount = true         # 【优化】显示字数
     ShowFullTextContent = false  # 首页只显示摘要
-    comments = false             # 默认关闭评论
+    comments = true             # 默认关闭评论
 
     # 网站 Logo/左上角名字配置
     [params.label]
